@@ -1,0 +1,279 @@
+:root {
+  /* SISTER palette — one calm, transparent green/blue/white scheme. */
+  --bg-deep: #0c1a3c;          /* navy ink only (text + page-wipe seams) */
+  --bg: #e6f2ed;              /* soft mint page background */
+  --bg-soft: #eef7f3;         /* lighter mint panel */
+  --bg-blue: #d3e9f4;         /* soft blue */
+  --ink: #122a4d;            /* primary navy text (slightly softer) */
+  --ink-60: rgba(18, 42, 77, 0.62);
+  --ink-40: rgba(18, 42, 77, 0.4);
+  --mint: #a9d7c9;           /* accent button / chip */
+  --mint-deep: #5fae97;
+  --line: rgba(18, 42, 77, 0.1);
+  --line-soft: rgba(18, 42, 77, 0.07);
+  --wipe-1: #d7ecf6;
+  --wipe-2: #bfdcee;
+
+  /* glass fills — transparent tints layered over the background field */
+  --glass: rgba(255, 255, 255, 0.42);
+  --glass-strong: rgba(255, 255, 255, 0.62);
+  --tint-mint: rgba(169, 215, 201, 0.22);
+  --tint-blue: rgba(191, 220, 238, 0.28);
+
+  --max: 1320px;
+  --pad: clamp(20px, 5vw, 72px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.shell {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+
+/* ── Page wipe (10-bar side sweep) ─────────────────────────────────────────── */
+.page-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  overflow: hidden;
+}
+.page-wipe.is-busy {
+  pointer-events: auto;
+}
+.page-wipe span {
+  flex: 1 1 auto;
+  width: 100%;
+  display: block;
+  /* uniform horizontal gradient on every bar, with a generous overlap bleed,
+     so the 10 stacked bars read as ONE seamless panel — no dividing lines. */
+  background: linear-gradient(90deg, var(--wipe-1), var(--wipe-2));
+  will-change: transform;
+  margin: -1px 0;
+}
+
+/* ── MaskLines headline reveal ─────────────────────────────────────────────── */
+.lm {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+/* ── Typography scales ─────────────────────────────────────────────────────── */
+.display {
+  font-size: clamp(2.8rem, 8vw, 6.4rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.h-xl {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.02;
+}
+.h-lg {
+  font-size: clamp(1.7rem, 3.4vw, 2.7rem);
+}
+.h-md {
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+}
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+}
+.lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  color: var(--ink);
+  font-weight: 500;
+}
+.muted {
+  color: var(--ink-60);
+}
+
+/* ── Buttons / pills ───────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 12px;
+  background: var(--mint);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--mint-deep);
+  box-shadow: 0 14px 30px -12px rgba(12, 26, 60, 0.35);
+}
+.btn .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover {
+  background: #fff;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-60);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────────── */
+.section {
+  position: relative;
+  padding: clamp(72px, 12vw, 160px) 0;
+}
+/* "tint" section — a light, transparent band that reads as a distinct block
+   without the heavy dark slab. Navy text stays. */
+.section-dark {
+  background: linear-gradient(
+    180deg,
+    var(--tint-blue),
+    var(--tint-mint)
+  );
+  color: var(--ink);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+.section-dark .muted {
+  color: var(--ink-60);
+}
+.section-dark .eyebrow {
+  color: var(--ink-60);
+}
+
+/* glass panel — transparent card for a single cohesive scheme */
+.panel {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.rule {
+  height: 2px;
+  width: 120px;
+  background: linear-gradient(90deg, transparent, var(--ink), transparent);
+  margin: 1.6rem 0;
+  border-radius: 2px;
+}
+
+/* ── Cards ─────────────────────────────────────────────────────────────────── */
+.card {
+  border-radius: 22px;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--ink);
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.45s ease, background 0.45s ease;
+  will-change: transform;
+}
+.card:hover {
+  transform: translateY(-6px);
+  background: var(--glass-strong);
+  box-shadow: 0 30px 60px -30px rgba(18, 42, 77, 0.28);
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* utility */
+.stack > * + * {
+  margin-top: 1.1rem;
+}
+.spin-slow {
+  animation: spin 26s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
