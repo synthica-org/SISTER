@@ -190,7 +190,17 @@ function PillarSection({
             }}
             className="pillar-art"
           >
-            <Mark size={150} spin color="rgba(12,26,60,0.55)" />
+            <span
+              style={{
+                fontSize: "clamp(4rem, 12vw, 8rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.04em",
+                color: "rgba(18,42,77,0.35)",
+                lineHeight: 1,
+              }}
+            >
+              {pillar.no}
+            </span>
           </div>
         </Reveal>
       </div>

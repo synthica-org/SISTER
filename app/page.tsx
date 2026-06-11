@@ -1,52 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Reveal, MaskLines } from "@/components/Reveal";
 import OrgMarquee from "@/components/OrgMarquee";
 import { Mark } from "@/components/Mark";
 import { TRACKS, PILLARS, FIGURES } from "@/lib/data";
 
 export default function Home() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const blobY = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  const blobScale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
-  const heroFade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section
-        ref={heroRef}
         style={{
-          minHeight: "100vh",
+          minHeight: "100svh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          paddingTop: 120,
-          paddingBottom: 60,
+          paddingTop: "clamp(110px, 16vh, 180px)",
+          paddingBottom: "clamp(40px, 8vh, 80px)",
           position: "relative",
         }}
       >
-        <motion.div
-          style={{
-            position: "absolute",
-            top: "8%",
-            right: "-6%",
-            y: blobY,
-            scale: blobScale,
-            opacity: heroFade,
-            zIndex: 1,
-          }}
-        >
-          <Mark size={420} spin color="rgba(124,192,172,0.32)" />
-        </motion.div>
-
         <div className="shell" style={{ position: "relative", zIndex: 2 }}>
           <Reveal as="div" className="eyebrow" delay={0.3}>
             Summer Institute of Science, Technology & Engineering Research
@@ -211,53 +186,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── JOIN FORCES ──────────────────────────────────────────────────── */}
-      <section
-        className="section"
-        style={{ textAlign: "center", position: "relative" }}
-      >
-        <motion.div
-          style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", zIndex: 0, opacity: 0.5 }}
-        >
-          <Mark size={520} spin color="rgba(124,192,172,0.18)" />
-        </motion.div>
-        <div className="shell" style={{ position: "relative", zIndex: 2 }}>
-          <Reveal as="div" className="eyebrow" inView>
-            Partners
-          </Reveal>
-          <Reveal inView delay={0.06}>
-            <MaskLines
-              className="display"
-              lines={["Let's build", "the next cohort"]}
-            />
-          </Reveal>
-          <Reveal inView delay={0.2} className="lead muted">
-            <p style={{ maxWidth: 560, margin: "22px auto 0" }}>
-              Student-led organizations, mentors, and partners — join us to lead
-              a track and shape the next generation of researchers.
-            </p>
-          </Reveal>
-          <Reveal inView delay={0.3}>
-            <div style={{ marginTop: 32, display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/organizations" className="btn">
-                <span className="dot" /> Meet the organizations
-              </Link>
-              <Link href="/apply" className="btn btn-ghost">
-                Apply as a student →
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
           .grid[style*="repeat(3"], .grid[style*="repeat(4"] {
             grid-template-columns: 1fr 1fr !important;
           }
         }
-        @media (max-width: 560px) {
-          .grid[style*="repeat(3"], .grid[style*="repeat(4"] {
+        @media (max-width: 680px) {
+          .grid[style*="repeat(2"],
+          .grid[style*="repeat(3"],
+          .grid[style*="repeat(4"] {
             grid-template-columns: 1fr !important;
           }
         }

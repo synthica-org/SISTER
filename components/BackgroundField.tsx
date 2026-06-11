@@ -125,16 +125,10 @@ export default function BackgroundField() {
   );
 }
 
-// A hand-placed constellation so it reads as intentional, not noise.
+// A hand-placed constellation, kept to the lower-left so it never sits behind
+// the nav / Apply button in the top-right.
 const CONSTELLATION = {
   nodes: [
-    [1180, 90],
-    [1320, 180],
-    [1240, 300],
-    [1380, 360],
-    [1100, 250],
-    [1300, 470],
-    [1160, 520],
     [120, 640],
     [260, 720],
     [80, 800],
@@ -145,19 +139,11 @@ const CONSTELLATION = {
   ] as [number, number][],
   links: [
     [0, 1],
+    [1, 3],
+    [3, 0],
     [1, 2],
-    [2, 4],
-    [4, 0],
-    [2, 3],
-    [3, 5],
+    [4, 5],
     [5, 6],
-    [6, 2],
-    [7, 8],
-    [8, 10],
-    [10, 7],
-    [8, 9],
-    [11, 12],
-    [12, 13],
-    [11, 13],
+    [4, 6],
   ] as [number, number][],
 };

@@ -80,7 +80,7 @@ export default function Nav() {
             className="btn"
             style={{ padding: "0.7rem 1.2rem" }}
           >
-            <span className="dot" /> Apply
+            Apply
           </Link>
           <button
             aria-label="Menu"
