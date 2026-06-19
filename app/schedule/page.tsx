@@ -28,10 +28,7 @@ export default function SchedulePage() {
           <Reveal as="div" className="eyebrow" inView>
             Weekly program structure
           </Reveal>
-          <div
-            className="grid"
-            style={{ gridTemplateColumns: "repeat(3, 1fr)", marginTop: 30 }}
-          >
+          <div className="grid grid-cols-3" style={{ marginTop: 30 }}>
             {[
               {
                 h: "Track Lead Sessions",
@@ -75,13 +72,8 @@ export default function SchedulePage() {
             Logistics at a glance
           </Reveal>
           <div
-            style={{
-              marginTop: 40,
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: 16,
-            }}
-            className="log-grid"
+            className="grid grid-cols-4-tight"
+            style={{ marginTop: 40, gap: 16 }}
           >
             {LOGISTICS.map((l, i) => (
               <Reveal key={l.k} inView delay={(i % 4) * 0.05}>
@@ -114,15 +106,6 @@ export default function SchedulePage() {
           </div>
         </div>
       </section>
-
-      <style>{`
-        @media (max-width: 960px) {
-          .log-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 520px) {
-          .log-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </>
   );
 }
@@ -204,15 +187,7 @@ function Timeline() {
                     <p style={{ marginTop: 12, maxWidth: 680 }} className="muted">
                       {ph.focus}
                     </p>
-                    <div
-                      style={{
-                        marginTop: 18,
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: 14,
-                      }}
-                      className="phase-detail"
-                    >
+                    <div className="phase-detail" style={{ marginTop: 18 }}>
                       <Detail label="Track Lead" value={ph.lead} />
                       <Detail label="Synthica Core" value={ph.core} />
                     </div>
@@ -236,12 +211,6 @@ function Timeline() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .phase-detail { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

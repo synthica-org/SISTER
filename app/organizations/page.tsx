@@ -37,13 +37,8 @@ export default function OrganizationsPage() {
             Co-Organizers & Track Leads
           </Reveal>
           <div
-            style={{
-              marginTop: 40,
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 20,
-            }}
-            className="org-grid"
+            className="grid grid-cols-3-wide"
+            style={{ marginTop: 40, gap: 20 }}
           >
             {ORGANIZATIONS.map((o, i) => (
               <ParallaxOrgCard key={o.name} org={o} index={i} />
@@ -67,20 +62,16 @@ export default function OrganizationsPage() {
               <Reveal key={t.slug} inView delay={(i % 3) * 0.05}>
                 <Link
                   href={`/tracks#${t.slug}`}
+                  className="lead-row"
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1.4fr auto",
-                    gap: 20,
-                    alignItems: "center",
                     padding: "22px 4px",
                     borderTop: "1px solid var(--line)",
                   }}
-                  className="lead-row"
                 >
                   <span style={{ fontWeight: 800, fontSize: "1.05rem" }}>
                     {t.name}
                   </span>
-                  <span className="muted" style={{ fontSize: "0.92rem" }}>
+                  <span className="muted lead-row-meta" style={{ fontSize: "0.92rem" }}>
                     {t.leads.map((l) => l.name).join("  ·  ")}
                   </span>
                   <span style={{ color: "var(--mint-deep)", fontWeight: 800 }}>→</span>
@@ -111,18 +102,6 @@ export default function OrganizationsPage() {
           </Reveal>
         </div>
       </section>
-
-      <style>{`
-        .lead-row:hover { background: rgba(255,255,255,0.04); }
-        @media (max-width: 860px) {
-          .org-grid { grid-template-columns: 1fr 1fr !important; }
-          .lead-row { grid-template-columns: 1fr auto !important; }
-          .lead-row span.muted { grid-column: 1 / -1; }
-        }
-        @media (max-width: 540px) {
-          .org-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </>
   );
 }

@@ -33,15 +33,8 @@ export default function Footer() {
           backdropFilter: "blur(8px)",
         }}
       >
-        <div className="shell" style={{ padding: "56px var(--pad) 40px" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(240px, 1.5fr) 1fr 1fr",
-              gap: 40,
-            }}
-            className="foot-grid"
-          >
+        <div className="shell" style={{ padding: "clamp(40px, 8vw, 56px) var(--pad) 40px" }}>
+          <div className="foot-grid">
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <Mark size={26} />
@@ -112,17 +105,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        .foot-link { transition: color 0.25s ease; }
-        .foot-link:hover { color: var(--ink) !important; }
-        @media (max-width: 760px) {
-          .foot-grid { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 480px) {
-          .foot-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </footer>
   );
 }

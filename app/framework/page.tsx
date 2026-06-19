@@ -47,13 +47,8 @@ export default function FrameworkPage() {
             specialized tracks, Synthica holds the spine.
           </Reveal>
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: 24,
-              marginTop: 48,
-            }}
-            className="dec-grid"
+            className="grid grid-cols-2-stack"
+            style={{ gap: 24, marginTop: 48 }}
           >
             {[
               {
@@ -98,12 +93,6 @@ export default function FrameworkPage() {
           </Reveal>
         </div>
       </section>
-
-      <style>{`
-        @media (max-width: 760px) {
-          .dec-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </>
   );
 }
@@ -123,15 +112,7 @@ function PillarSection({
         padding: "clamp(64px, 9vw, 120px) 0",
       }}
     >
-      <div
-        className="shell"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1.1fr 0.9fr",
-          gap: 48,
-          alignItems: "center",
-        }}
-      >
+      <div className="shell grid-aside">
         <div>
           <Reveal as="div" inView>
             <div
@@ -204,15 +185,6 @@ function PillarSection({
           </div>
         </Reveal>
       </div>
-
-      <style>{`
-        @media (max-width: 860px) {
-          section .shell[style*="grid-template-columns: 1.1fr"] {
-            grid-template-columns: 1fr !important;
-          }
-          .pillar-art { max-width: 360px; }
-        }
-      `}</style>
     </section>
   );
 }

@@ -23,10 +23,7 @@ export default function PublicationPage() {
 
       <section className="section" style={{ paddingTop: 50 }}>
         <div className="shell">
-          <div
-            className="grid"
-            style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
-          >
+          <div className="grid grid-cols-3">
             {[
               {
                 h: "Top 3 per track",

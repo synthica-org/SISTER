@@ -65,6 +65,7 @@ function OrgPill({
 }) {
   return (
     <div
+      className="org-pill"
       style={{
         display: "flex",
         alignItems: "center",

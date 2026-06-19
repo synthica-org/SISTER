@@ -34,10 +34,10 @@ export default function Home() {
           />
 
           <motion.div
-            className="rule"
+            className="rule hero-rule"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            style={{ transformOrigin: "left", width: 300 }}
+            style={{ transformOrigin: "left" }}
             transition={{ duration: 1, ease: [0.2, 0.7, 0.2, 1], delay: 0.9 }}
           />
 
@@ -99,10 +99,7 @@ export default function Home() {
           </div>
 
           {/* clear, static overview of EVERY track with its lead organizers */}
-          <div
-            className="grid"
-            style={{ gridTemplateColumns: "repeat(2, 1fr)" }}
-          >
+          <div className="grid grid-cols-2">
             {TRACKS.map((t, i) => (
               <Reveal key={t.slug} inView delay={(i % 2) * 0.06}>
                 <Link href={`/tracks#${t.slug}`}>
@@ -125,10 +122,7 @@ export default function Home() {
             path to publication.
           </Reveal>
 
-          <div
-            className="grid"
-            style={{ gridTemplateColumns: "repeat(3, 1fr)", marginTop: 56 }}
-          >
+          <div className="grid grid-cols-3" style={{ marginTop: 56 }}>
             {PILLARS.map((p, i) => (
               <Reveal key={p.id} inView delay={i * 0.1}>
                 <div
@@ -175,31 +169,13 @@ export default function Home() {
           <Reveal as="div" className="eyebrow" inView>
             SISTER in a few figures
           </Reveal>
-          <div
-            className="grid"
-            style={{ gridTemplateColumns: "repeat(4, 1fr)", marginTop: 40 }}
-          >
+          <div className="grid grid-cols-4" style={{ marginTop: 40 }}>
             {FIGURES.map((f, i) => (
               <Figure key={i} {...f} delay={i * 0.1} />
             ))}
           </div>
         </div>
       </section>
-
-      <style>{`
-        @media (max-width: 1000px) {
-          .grid[style*="repeat(3"], .grid[style*="repeat(4"] {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-        @media (max-width: 680px) {
-          .grid[style*="repeat(2"],
-          .grid[style*="repeat(3"],
-          .grid[style*="repeat(4"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </>
   );
 }

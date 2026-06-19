@@ -32,37 +32,26 @@ export default function Nav() {
         borderBottom: scrolled ? "1px solid var(--line)" : "1px solid transparent",
       }}
     >
-      <div
-        className="shell"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: 78,
-        }}
-      >
-        {/* left links */}
+      <div className="shell nav-inner">
         <nav className="nav-left" style={{ display: "flex", gap: "1.7rem" }}>
           {NAV_LINKS.map((l) => (
             <NavLink key={l.href} {...l} active={pathname === l.href} />
           ))}
         </nav>
 
-        {/* center mark */}
         <Link
           href="/"
           aria-label="SISTER home"
+          className="nav-brand"
           style={{
             display: "flex",
             alignItems: "center",
             gap: 10,
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
           }}
         >
           <Mark size={28} spin />
           <span
+            className="nav-brand-text"
             style={{
               fontWeight: 800,
               letterSpacing: "0.12em",
@@ -73,11 +62,10 @@ export default function Nav() {
           </span>
         </Link>
 
-        {/* right cluster */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.9rem" }}>
+        <div className="nav-actions">
           <a
             href={APPLY_URL}
-            className="btn"
+            className="btn nav-apply"
             target="_blank"
             rel="noopener noreferrer"
             style={{ padding: "0.7rem 1.2rem" }}
@@ -88,22 +76,12 @@ export default function Nav() {
             aria-label="Menu"
             className="nav-burger"
             onClick={() => setOpen((o) => !o)}
-            style={{
-              display: "none",
-              background: "rgba(255,255,255,0.6)",
-              border: "1px solid var(--line)",
-              borderRadius: 10,
-              width: 40,
-              height: 40,
-              cursor: "pointer",
-            }}
           >
             <span style={{ fontWeight: 800 }}>{open ? "×" : "≡"}</span>
           </button>
         </div>
       </div>
 
-      {/* mobile drawer */}
       {open && (
         <motion.div
           initial={{ opacity: 0, y: -8 }}
@@ -134,13 +112,6 @@ export default function Nav() {
           </div>
         </motion.div>
       )}
-
-      <style>{`
-        @media (max-width: 880px) {
-          .nav-left { display: none !important; }
-          .nav-burger { display: inline-flex !important; align-items: center; justify-content: center; }
-        }
-      `}</style>
     </motion.header>
   );
 }
@@ -180,7 +151,6 @@ function NavLink({
         }}
         className="navline"
       />
-      <style>{`.navlink:hover .navline { width: 100% !important; }`}</style>
     </Link>
   );
 }

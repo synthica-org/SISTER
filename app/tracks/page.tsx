@@ -145,15 +145,7 @@ function TrackItem({
             transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
             style={{ overflow: "hidden" }}
           >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1.4fr 1fr",
-                gap: 32,
-                padding: "10px 22px 30px 68px",
-              }}
-              className="track-body"
-            >
+            <div className="track-body">
               <div>
                 <p className="muted" style={{ maxWidth: 520, fontSize: "1rem" }}>
                   {track.blurb}
@@ -231,15 +223,6 @@ function TrackItem({
           </motion.div>
         )}
       </AnimatePresence>
-
-      <style>{`
-        .track-head:hover { background: rgba(255,255,255,0.3); }
-        .lead-card { transition: transform 0.3s ease, background 0.3s ease; }
-        .lead-card:hover { transform: translateY(-2px); background: rgba(255,255,255,0.75); }
-        @media (max-width: 760px) {
-          .track-body { grid-template-columns: 1fr !important; padding-left: 22px !important; }
-        }
-      `}</style>
     </div>
   );
 }

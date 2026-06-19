@@ -15,9 +15,8 @@ export default function PageHero({
 }) {
   return (
     <section
+      className="page-hero"
       style={{
-        paddingTop: 160,
-        paddingBottom: 40,
         position: "relative",
         zIndex: 2,
       }}
@@ -32,6 +31,7 @@ export default function PageHero({
               fontSize: "0.85rem",
               fontWeight: 700,
               marginBottom: 22,
+              flexWrap: "wrap",
             }}
           >
             <Link href="/" className="muted">
