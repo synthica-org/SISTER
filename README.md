@@ -17,7 +17,7 @@ npm run build    # production build
 |-------|-----------|
 | `/` | Hero, org marquee, featured tracks, framework, figures, join-forces |
 | `/framework` | The tripartite model (tracks · core · publication) in detail |
-| `/tracks` | All 8 curated research tracks with focus areas & Track Leads |
+| `/tracks` | All curated research tracks with focus areas & Track Leads |
 | `/schedule` | Weekly structure, animated 4-week timeline, logistics |
 | `/organizations` | Parallax org cards + who-leads-what + become a Track Lead |
 | `/publication` | The path to the Synthica Journal, double-blind review |

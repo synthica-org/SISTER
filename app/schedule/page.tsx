@@ -15,9 +15,8 @@ export default function SchedulePage() {
         lines={["Four weeks,", "one publication"]}
         intro={
           <p>
-            Applications open in <strong>mid-June</strong> and the program
-            formally begins in late June / early July. SISTER runs for{" "}
-            <strong>4 intensive weeks</strong>, concluding in mid-August with the
+            Applications open in <strong>mid-June</strong>. The program runs{" "}
+            <strong>June 29 – August 2</strong> — four intensive weeks culminating in the
             selection of top projects for publication review.
           </p>
         }

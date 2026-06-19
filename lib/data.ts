@@ -126,15 +126,6 @@ export const TRACKS: Track[] = [
     tags: ["Multi-Agent Systems", "Agentic AI", "Model Development", "AI Safety"],
   },
   {
-    slug: "computational-biology",
-    name: "Computational Biology",
-    focus: "Genomics, Protein Folding, and Systems Biology",
-    leads: [{ name: "NovusCatalyst" }],
-    blurb:
-      "Decode the machinery of life with code. Students model genomic sequences, predict protein structure, and build systems-level views of living organisms.",
-    tags: ["Genomics", "Protein Folding", "Systems Biology"],
-  },
-  {
     slug: "economics",
     name: "Economics",
     focus: "Econometrics and Game Theory",
@@ -156,37 +147,19 @@ export const TRACKS: Track[] = [
     slug: "biomedicine-data-science",
     name: "Biomedicine & Data Science",
     focus: "Biostatistics and Predictive Diagnostics",
-    leads: [{ name: "ATLAS" }],
+    leads: [{ name: "ATLAS" }, { name: "NovusCatalyst" }],
     blurb:
       "Turn clinical data into insight. Students use biostatistics and predictive modeling to advance diagnostics and health outcomes.",
     tags: ["Biostatistics", "Diagnostics", "Health Data"],
   },
   {
-    slug: "neuroscience",
-    name: "Neuroscience",
-    focus: "Cognitive Science and Neural Modeling",
-    leads: [{ name: "Track Lead — to be announced" }],
-    blurb:
-      "Investigate how the brain computes. From cognitive science to neural modeling, students explore the substrate of thought and behavior.",
-    tags: ["Cognitive Science", "Neural Modeling", "Behavior"],
-  },
-  {
     slug: "social-science",
     name: "Social Science",
     focus: "Quantitative & qualitative research methods",
-    leads: [{ name: "Track Lead — to be announced" }],
+    leads: [{ name: "Women's Economic History Lab" }],
     blurb:
       "A rigorous social science track bringing quantitative and qualitative research methods to questions about society, institutions, and people.",
     tags: ["Methods", "Society", "Research"],
-  },
-  {
-    slug: "additional-tracks",
-    name: "Additional Tracks",
-    focus: "More disciplines announced each cycle",
-    leads: [{ name: "Partner organizations — to be announced" }],
-    blurb:
-      "New disciplines are added each cycle as partner organizations join. More tracks will be announced before applications open.",
-    tags: ["Emerging", "Interdisciplinary", "New"],
   },
 ];
 
@@ -199,11 +172,12 @@ export const ORGANIZATIONS = [
     href: "https://research.dubaicssociety.com",
   },
   { name: "Delta Rising Foundation", role: "Track Lead", track: "AI / ML" },
-  { name: "NovusCatalyst", role: "Track Lead", track: "Computational Biology" },
+  { name: "NovusCatalyst", role: "Track Lead", track: "Biomedicine & Data Science" },
   { name: "FinanceMeta", role: "Track Lead", track: "Economics" },
   { name: "Youth Economy Lab", role: "Track Lead", track: "Economics" },
   { name: "MindScroll Health", role: "Track Lead", track: "Psychology" },
   { name: "ATLAS", role: "Track Lead", track: "Biomedicine & Data Science" },
+  { name: "Women's Economic History Lab", role: "Track Lead", track: "Social Science" },
   { name: "Synthica", role: "Core & Publication", track: "Synthica Journal" },
 ];
 
@@ -253,7 +227,7 @@ export const PHASES = [
 // ── Key figures ─────────────────────────────────────────────────────────────
 export const FIGURES = [
   { value: "4", label: "weeks of intensive, project-based research" },
-  { value: "8+", label: "specialized research tracks across STEM & social science" },
+  { value: "5", label: "specialized research tracks across STEM & social science" },
   { value: "Top 3", label: "projects per track selected for publication" },
   { value: "$0", label: "cost — fully free instruction and mentorship" },
 ];
@@ -261,9 +235,8 @@ export const FIGURES = [
 export const LOGISTICS = [
   { k: "Location", v: "Global / Virtual" },
   { k: "Applications", v: "Open mid-June" },
-  { k: "Program begins", v: "Late June / Early July" },
+  { k: "Program dates", v: "June 29 – August 2" },
   { k: "Duration", v: "4 weeks" },
-  { k: "Concludes", v: "Mid-August" },
   { k: "Organized by", v: "A coalition of student-led organizations" },
   { k: "Incentive", v: "Publication in the Synthica Journal" },
   { k: "Price", v: "Free" },
