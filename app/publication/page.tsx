@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import { Mark } from "@/components/Mark";
+import { APPLY_URL } from "@/lib/data";
 
 export default function PublicationPage() {
   return (
@@ -15,7 +15,7 @@ export default function PublicationPage() {
           <p>
             A core pillar of SISTER is the publication of top research in the{" "}
             <strong>Synthica Journal</strong>. At the conclusion of the program,
-            the top 5 projects from each track are selected for formal
+            the top 3 projects from each track are selected for formal
             publication.
           </p>
         }
@@ -29,7 +29,7 @@ export default function PublicationPage() {
           >
             {[
               {
-                h: "Top 5 per track",
+                h: "Top 3 per track",
                 p: "The strongest projects from every track are nominated for the journal — a clear, attainable target for each team.",
               },
               {
@@ -70,7 +70,7 @@ export default function PublicationPage() {
           <div style={{ marginTop: 44, display: "grid", gap: 4 }}>
             {[
               ["01", "Final submission", "Teams submit their full manuscript at the end of Week 4, refined through internal peer review."],
-              ["02", "Track selection", "Track Leads nominate the top 5 projects from their cohort for journal consideration."],
+              ["02", "Track selection", "Track Leads nominate the top 3 projects from their cohort for journal consideration."],
               ["03", "Double-blind peer review", "Reviewers assess each manuscript on technical rigor and ethical compliance, blind to authorship."],
               ["04", "Open-access publication", "Accepted projects are published in the Synthica Journal with APCs fully covered."],
             ].map(([no, h, p], i) => (
@@ -100,9 +100,9 @@ export default function PublicationPage() {
           </div>
 
           <Reveal inView delay={0.2}>
-            <Link href="/apply" className="btn" style={{ marginTop: 44 }}>
+            <a href={APPLY_URL} className="btn" style={{ marginTop: 44 }} target="_blank" rel="noopener noreferrer">
               <span className="dot" /> Start your research →
-            </Link>
+            </a>
           </Reveal>
         </div>
       </section>

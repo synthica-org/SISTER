@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { Mark } from "./Mark";
-import { NAV_LINKS } from "@/lib/data";
+import { NAV_LINKS, APPLY_URL } from "@/lib/data";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -27,7 +27,7 @@ export default function Nav() {
         right: 0,
         zIndex: 90,
         transition: "background 0.4s ease, box-shadow 0.4s ease",
-        background: scrolled ? "rgba(227,241,236,0.78)" : "transparent",
+        background: scrolled ? "rgba(230,240,248,0.78)" : "transparent",
         backdropFilter: scrolled ? "blur(14px)" : "none",
         borderBottom: scrolled ? "1px solid var(--line)" : "1px solid transparent",
       }}
@@ -75,13 +75,15 @@ export default function Nav() {
 
         {/* right cluster */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.9rem" }}>
-          <Link
-            href="/apply"
+          <a
+            href={APPLY_URL}
             className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{ padding: "0.7rem 1.2rem" }}
           >
             Apply
-          </Link>
+          </a>
           <button
             aria-label="Menu"
             className="nav-burger"

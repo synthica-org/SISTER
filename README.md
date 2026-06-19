@@ -21,7 +21,8 @@ npm run build    # production build
 | `/schedule` | Weekly structure, animated 4-week timeline, logistics |
 | `/organizations` | Parallax org cards + who-leads-what + become a Track Lead |
 | `/publication` | The path to the Synthica Journal, double-blind review |
-| `/apply` | Interest form (free, global) + what-you-get + key dates |
+
+Apply buttons link to the external Google Forms interest form (`APPLY_URL` in `lib/data.ts`). `/apply` redirects there for old bookmarks.
 
 ## The animation system
 

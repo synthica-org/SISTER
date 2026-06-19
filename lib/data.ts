@@ -10,6 +10,9 @@ export const SITE = {
     "SISTER is a FREE, global, project-based research institute empowering high school and early undergraduate students through rigorous STEM and Social Science research.",
 };
 
+export const APPLY_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSc851kN-KrRSHFF6xYTc-9m6YUf_W20Oq0uvWsQ5x2nZxeOqg/viewform?usp=header";
+
 export const NAV_LINKS = [
   { label: "Framework", href: "/framework" },
   { label: "Tracks", href: "/tracks" },
@@ -75,7 +78,7 @@ export const PILLARS = [
     no: "03",
     title: "Publication & Output",
     summary:
-      "The top 5 projects from each track are selected for formal publication.",
+      "The top 3 projects from each track are selected for formal publication.",
     points: [
       {
         h: "Synthica Journal",
@@ -126,7 +129,7 @@ export const TRACKS: Track[] = [
     slug: "computational-biology",
     name: "Computational Biology",
     focus: "Genomics, Protein Folding, and Systems Biology",
-    leads: [{ name: "Novus Catalyst" }],
+    leads: [{ name: "NovusCatalyst" }],
     blurb:
       "Decode the machinery of life with code. Students model genomic sequences, predict protein structure, and build systems-level views of living organisms.",
     tags: ["Genomics", "Protein Folding", "Systems Biology"],
@@ -196,7 +199,7 @@ export const ORGANIZATIONS = [
     href: "https://research.dubaicssociety.com",
   },
   { name: "Delta Rising Foundation", role: "Track Lead", track: "AI / ML" },
-  { name: "Novus Catalyst", role: "Track Lead", track: "Computational Biology" },
+  { name: "NovusCatalyst", role: "Track Lead", track: "Computational Biology" },
   { name: "FinanceMeta", role: "Track Lead", track: "Economics" },
   { name: "Youth Economy Lab", role: "Track Lead", track: "Economics" },
   { name: "MindScroll Health", role: "Track Lead", track: "Psychology" },
@@ -251,7 +254,7 @@ export const PHASES = [
 export const FIGURES = [
   { value: "4", label: "weeks of intensive, project-based research" },
   { value: "8+", label: "specialized research tracks across STEM & social science" },
-  { value: "Top 5", label: "projects per track selected for publication" },
+  { value: "Top 3", label: "projects per track selected for publication" },
   { value: "$0", label: "cost — fully free instruction and mentorship" },
 ];
 

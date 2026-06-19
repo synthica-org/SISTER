@@ -185,7 +185,7 @@ function PillarSection({
               aspectRatio: "1 / 1",
               borderRadius: 28,
               background:
-                "radial-gradient(120% 120% at 30% 20%, rgba(207,230,242,0.7), rgba(169,215,201,0.5))",
+                "radial-gradient(120% 120% at 30% 20%, rgba(207,230,242,0.7), rgba(158,200,232,0.5))",
               border: "1px solid var(--line)",
             }}
             className="pillar-art"

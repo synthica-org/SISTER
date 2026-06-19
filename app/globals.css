@@ -1,14 +1,14 @@
 :root {
-  /* SISTER palette — one calm, transparent green/blue/white scheme. */
+  /* SISTER palette — calm transparent blue/white scheme. */
   --bg-deep: #0c1a3c;          /* navy ink only (text + page-wipe seams) */
-  --bg: #e6f2ed;              /* soft mint page background */
-  --bg-soft: #eef7f3;         /* lighter mint panel */
+  --bg: #e6f0f8;              /* soft blue page background */
+  --bg-soft: #eef5fc;         /* lighter blue panel */
   --bg-blue: #d3e9f4;         /* soft blue */
   --ink: #122a4d;            /* primary navy text (slightly softer) */
   --ink-60: rgba(18, 42, 77, 0.62);
   --ink-40: rgba(18, 42, 77, 0.4);
-  --mint: #a9d7c9;           /* accent button / chip */
-  --mint-deep: #5fae97;
+  --mint: #9ec8e8;           /* accent button / chip */
+  --mint-deep: #4d8ebf;
   --line: rgba(18, 42, 77, 0.1);
   --line-soft: rgba(18, 42, 77, 0.07);
   --wipe-1: #d7ecf6;
@@ -17,7 +17,7 @@
   /* glass fills — transparent tints layered over the background field */
   --glass: rgba(255, 255, 255, 0.42);
   --glass-strong: rgba(255, 255, 255, 0.62);
-  --tint-mint: rgba(169, 215, 201, 0.22);
+  --tint-mint: rgba(158, 200, 232, 0.22);
   --tint-blue: rgba(191, 220, 238, 0.28);
 
   --max: 1320px;

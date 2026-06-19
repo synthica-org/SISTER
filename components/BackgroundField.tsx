@@ -2,7 +2,7 @@
 
 // A clean, structured, *cheap* background field.
 //
-// Design: a soft mint gradient wash + a calm flow-line field (smooth contour
+// Design: a soft blue gradient wash + a calm flow-line field (smooth contour
 // curves) + a sparse constellation of connected nodes — intentional geometry,
 // not random blobs. Inspired by elegant network/flow-field hero backgrounds.
 //
@@ -22,7 +22,7 @@ export default function BackgroundField() {
         overflow: "hidden",
         pointerEvents: "none",
         background:
-          "radial-gradient(130% 100% at 78% 8%, #eaf6fb 0%, #e7f3ee 38%, #def0e8 70%, #d6ebe3 100%)",
+          "radial-gradient(130% 100% at 78% 8%, #eaf6fb 0%, #e3f0fa 38%, #d8eaf6 70%, #d0e5f2 100%)",
       }}
     >
       {/* soft corner glow — pure CSS, static */}
@@ -47,7 +47,7 @@ export default function BackgroundField() {
           height: "60vw",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(169,215,201,0.4) 0%, rgba(169,215,201,0) 64%)",
+            "radial-gradient(circle, rgba(158,200,232,0.4) 0%, rgba(158,200,232,0) 64%)",
         }}
       />
 

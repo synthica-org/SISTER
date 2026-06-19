@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Mark } from "./Mark";
 import { Reveal } from "./Reveal";
-import { NAV_LINKS } from "@/lib/data";
+import { NAV_LINKS, APPLY_URL } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -18,9 +18,9 @@ export default function Footer() {
             Ready to become a researcher?
           </Reveal>
           <Reveal inView delay={0.12}>
-            <Link href="/apply" className="btn" style={{ marginTop: 28 }}>
+            <a href={APPLY_URL} className="btn" style={{ marginTop: 28 }} target="_blank" rel="noopener noreferrer">
               <span className="dot" /> Apply to SISTER →
-            </Link>
+            </a>
           </Reveal>
         </div>
       </section>
@@ -81,9 +81,9 @@ export default function Footer() {
                 Get involved
               </div>
               <div style={{ display: "grid", gap: 10 }}>
-                <Link href="/apply" className="muted foot-link">
+                <a href={APPLY_URL} className="muted foot-link" target="_blank" rel="noopener noreferrer">
                   Apply as a student
-                </Link>
+                </a>
                 <Link href="/organizations" className="muted foot-link">
                   Partner organizations
                 </Link>

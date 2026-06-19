@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Reveal, MaskLines } from "@/components/Reveal";
 import OrgMarquee from "@/components/OrgMarquee";
 import { Mark } from "@/components/Mark";
-import { TRACKS, PILLARS, FIGURES } from "@/lib/data";
+import { TRACKS, PILLARS, FIGURES, APPLY_URL } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -52,9 +52,9 @@ export default function Home() {
 
           <Reveal delay={1.15}>
             <div style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn">
+              <a href={APPLY_URL} className="btn" target="_blank" rel="noopener noreferrer">
                 <span className="dot" /> Apply now
-              </Link>
+              </a>
               <Link href="/framework" className="btn btn-ghost">
                 How it works →
               </Link>
