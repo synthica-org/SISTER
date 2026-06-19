@@ -227,7 +227,7 @@ export const PHASES = [
 // ── Key figures ─────────────────────────────────────────────────────────────
 export const FIGURES = [
   { value: "4", label: "weeks of intensive, project-based research" },
-  { value: "5", label: "specialized research tracks across STEM & social science" },
+  { value: "5+", label: "specialized research tracks across STEM & social science" },
   { value: "Top 3", label: "projects per track selected for publication" },
   { value: "$0", label: "cost — fully free instruction and mentorship" },
 ];
